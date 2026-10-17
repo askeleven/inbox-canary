@@ -1,0 +1,57 @@
+{
+  "name": "@askeleven/inbox-canary",
+  "version": "0.1.0",
+  "description": "A fire drill for prompt injection. Plants decoy emails and documents with hidden instructions, then checks whether your agent obeyed them. Pass/fail badge for your README. CLI and library. Zero dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "AskEleven",
+  "homepage": "https://github.com/askeleven/inbox-canary",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/askeleven/inbox-canary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/askeleven/inbox-canary/issues"
+  },
+  "keywords": [
+    "prompt-injection",
+    "indirect-prompt-injection",
+    "canary",
+    "red-team",
+    "llm-security",
+    "agent-security",
+    "email",
+    "ai-agents",
+    "owasp-llm01"
+  ],
+  "bin": {
+    "inbox-canary": "bin/cli.js"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "bin",
+    "src",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "build:types": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build:types && npm test"
+  },
+  "types": "types/index.d.ts",
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "typescript": "^5.9.3"
+  }
+}
