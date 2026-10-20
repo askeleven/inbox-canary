@@ -108,7 +108,7 @@ have. These are single runs, not a benchmark.
 
 Point your agent at the folder the way it gets real mail and files: load the `.eml` files or
 `inbox.mbox` into a test mailbox, put `messages.json` behind your mail tool, or let it read
-the folder. Ask it to do its normal job: summarise, triage, reply. Save the transcript.
+the folder. Ask it to do its normal job: summarize, triage, reply. Save the transcript.
 
 **Keep the manifest away from the agent.** It is the answer sheet. `make` writes it next to
 the folder, not inside it, and refuses to put it inside.
