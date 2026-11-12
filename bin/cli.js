@@ -6,6 +6,7 @@ import { dirname, resolve, relative } from 'node:path'
 import { makeDrill, writeDrill, checkDrill, parseTranscript, badge, validateManifest, TECHNIQUES, CanaryError } from '../src/index.js'
 import { formatText } from '../src/report.js'
 import { VERSION } from '../src/version.js'
+import { starHint } from './star-hint.js'
 
 const USAGE = `
 inbox-canary make <folder> [--manifest <file>]
@@ -211,6 +212,7 @@ function useColour(values) {
 main(process.argv.slice(2)).then(
   (code) => {
     process.exitCode = code
+    starHint('inbox-canary', code, process.argv.slice(2))
   },
   (error) => {
     process.stderr.write(`${error?.stack ?? error}\n`)
